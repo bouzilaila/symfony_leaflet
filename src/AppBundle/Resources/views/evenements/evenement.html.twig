@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+    <html>
+        
+        <head>
+
+            <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+            <title>Annuaire</title>
+        
+            <link rel="stylesheet" href="{{ asset('public/css/leaflet.css')}}"/>
+            <link rel="stylesheet" href="{{ asset('public/css/style.css') }}" type="text/css" />
+            <link rel="stylesheet" href="{{ asset('public/css/style1.css') }}" type="text/css" />
+            
+            <script src="{{ asset('public/js/leaflet.js')}}"></script>
+            <script src="{{ asset('public/js/mymap.js') }}"></script>
+                        
+        </head>
+        <body>
+
+            <header>
+                <div class='nav1'>
+                    <a href="#">S'INSCRIRE</a>
+
+                </div>
+
+            </header>
+            <main>
+                    <div id='map'></div>
+                    
+                    <section id="calendar">
+                        <div id="calendar-container">
+                            <div id="calendar-header">
+                                <span id="calendar-month-year"></span>
+                                <p>nfnkdkjld,lcx,ldfl,c:;,,cljdls,v:;c,lj,c,:ccxlxjidf,c,</p>
+                            </div>
+                            <div id="calendar-dates">
+                            </div>
+                        </div>
+                    </section>
+            </main>
+            <footer>
+
+            </footer>
+
+            <script>
+                let mymap = L.map('map').setView([49.2517, 2.472029], 10);
+
+                display_maps();
+            </script>   
+            
+           
+        </body>
+    </html>       
+
+
+
