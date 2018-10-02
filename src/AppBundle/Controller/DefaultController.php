@@ -99,4 +99,31 @@ class DefaultController extends Controller
         ]);                
     }
 
+    protected function getEvenements()
+    {
+        $events = [
+            ['nom' => 'Meeting concert place de la Concorde', 'date' => '17 septembre 2018', 'adresse' => 'Place de la Concorde, 75008 Paris'],
+            ['nom' => 'Le lancement au Zénith de Paris', 'date' => '1 fevrier 2019', 'adresse' => '211 Avenue Jean Jaurès, 75019 Paris'],
+            ['nom' => 'La manif-concert', 'date' => '21 avril 2019', 'adresse' => 'Av. des Champs-Élysées, 75008 Paris']  
+        ];
+
+        return $events;
+    }
+
+
+      /**
+     * @Route("/events", name="events")
+     */
+
+    public function mapAction(Request $request)
+    {
+        
+        return $this->render('@App/evenements/evenement.html.twig', [
+            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
+            'annuaire' => $this -> getList()
+        ]);
+
+    }
+
 }
+    
