@@ -25,18 +25,20 @@
             <main>
 
                 <section class='evenements'>
+
+                    {% for e in evenements %}
                     <ul>
                         <li>
-                            {{events.nom}}
+                            {{e.nom}}
                         </li>
                         <li>
-                            {{events.adresse}}
+                            {{e.adresse}}
                         </li>
                         <li>
-                            {{events.date}}
+                            {{e.date}}
                         </li>
                         <li>
-                            {{events.heure}}
+                            {{e.heure}}
                         </li>
                     </ul>
                 </section>
