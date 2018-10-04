@@ -132,7 +132,7 @@ class Events
     /**
      * Get heure
      *
-     * @return \Time
+     * @return \DateTime
      */
     public function getHeure()
     {
