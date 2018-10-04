@@ -21,22 +21,27 @@ class DefaultController extends Controller
     }
 
      /**
-     * @Route("/liste", name="annuaire")
+     * @Route("/events", name="events")
      */
 
-    public function annuaireAction(Request $request)
+    public function eventsAction(Request $request)
     {
         
-        return $this->render('@App/annuaire/liste.html.twig', [
+        return $this->render('@App/evenements/evenement.html.twig', [
             'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
-            'annuaire' => $this -> getList()
+            
         ]);
-
     }
 
-     /**
-     * @Route("/coordonnees/{id}", name="coordonnees")
-     */
+    public function getevents()
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $events = $em->getRepository('AppBundle:Events')->findAll();
+
+        return $events;
+    }
+
 
     public function coordonneesAction(Request $request, $id)
     {
@@ -60,7 +65,50 @@ class DefaultController extends Controller
 
     }
 
-    protected function getList()
+}
+    
+
+     /**
+     * @Route("/liste", name="annuaire")
+     */
+
+    /*public function annuaireAction(Request $request)
+    {
+        
+        return $this->render('@App/annuaire/liste.html.twig', [
+            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
+            'annuaire' => $this -> getList()
+        ]);
+
+    }*/
+
+     /**
+     * @Route("/coordonnees/{id}", name="coordonnees")
+     */
+
+    /*public function coordonneesAction(Request $request, $id)
+    {
+        // var_dump($this -> getList()[$id]); die;
+        $personne = $this->getList()[$id];
+        $adresse = str_replace(' ', '+', $personne['adresse']);
+        // $suggestions = json_decode($this -> curl_get($adresse), true);
+
+        // pour rendre le service actif
+        $curl = $this -> get('AppBundle\Network\ServiceCurl');
+        $suggestions = json_decode($curl->curl_get($adresse), true);
+        
+        $gps  = $suggestions['features'][0]['geometry']['coordinates'];
+
+        return $this->render('@App/annuaire/coordonnees.html.twig', [
+            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
+            'annuaire' => $this -> getList()[$id],
+            'latitude' => $gps[1],
+            'longitude' => $gps[0]
+        ]);
+
+    }*/
+
+    /*protected function getList()
     {
         $liste = [
 
@@ -71,13 +119,13 @@ class DefaultController extends Controller
         ];
 
     return $liste;
-    }
+    }*/
 
     /**
      * @Route("/events", name="events")
      */
 
-    public function evenementsAction(Request $request)
+    /*public function evenementsAction(Request $request)
     {
         $curl = $this -> get('AppBundle\Network\ServiceCurl');
 
@@ -97,9 +145,9 @@ class DefaultController extends Controller
             'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
             'evenements' => $gpsEvents
         ]);                
-    }
+    }*/
 
-    protected function getEvenements()
+   /* protected function getEvenements()
     {
         $events = [
             ['nom' => 'Meeting concert place de la Concorde', 'date' => '17 septembre 2018', 'adresse' => 'Place de la Concorde, 75008 Paris'],
@@ -108,22 +156,4 @@ class DefaultController extends Controller
         ];
 
         return $events;
-    }
-
-
-      /**
-     * @Route("/events", name="events")
-     */
-
-    public function mapAction(Request $request)
-    {
-        
-        return $this->render('@App/evenements/evenement.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
-            'annuaire' => $this -> getList()
-        ]);
-
-    }
-
-}
-    
+    }*/

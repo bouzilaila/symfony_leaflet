@@ -19,35 +19,39 @@
             <header>
                 <div class='nav1'>
                     <a href="#">S'INSCRIRE</a>
-
                 </div>
 
             </header>
             <main>
+
+                <section class='evenements'>
+                    <ul>
+                        <li>
+                            {{event.nom}}
+                        </li>
+                        <li>
+                            {{form.adresse}}
+                        </li>
+                        <li>
+                            {{form.date}}
+                        </li>
+                        <li>
+                            {{form.heure}}
+                        </li>
+                    </ul>
+                </section>
+
+                <h2>La carte</h2>
+
                     <div id='map'></div>
                     
-                    <!--<section id="calendar">
-                        <div id="calendar-container">
-                            <div id="calendar-header">
-                                <span id="calendar-month-year"></span>
-                                <p>nfnkdkjld,lcx,ldfl,c:;,,cljdls,v:;c,lj,c,:ccxlxjidf,c,</p>
-                            </div>
-                            <div id="calendar-dates">
-                            </div>
-                        </div>
-                    </section>-->
             </main>
-            <footer>
-
-            </footer>
-
+            
             <script>
                 let mymap = L.map('map').setView([49.2517, 2.472029], 10);
 
                 display_maps();
             </script>   
-            
-           
         </body>
     </html>       
 
