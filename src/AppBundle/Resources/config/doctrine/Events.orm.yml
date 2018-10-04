@@ -18,5 +18,5 @@ AppBundle\Entity\Events:
         date:
             type: date
         heure:
-            type: datetime
+            type: time
     lifecycleCallbacks: {  }
