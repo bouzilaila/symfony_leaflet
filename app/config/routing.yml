@@ -1,3 +1,8 @@
 app:
     resource: '@AppBundle/Controller/'
     type: annotation
+
+app_events:
+    resource: "@AppBundle/Resources/config/routing/events.xml"
+    prefix:   /events
+
