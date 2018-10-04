@@ -24,14 +24,14 @@ class DefaultController extends Controller
      * @Route("/events", name="events")
      */
 
-    /*public function eventsAction(Request $request)
+    public function eventsAction(Request $request)
     {
         
         return $this->render('@App/evenements/evenement.html.twig', [
             'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
             
         ]);
-    }*/
+    }
 
     public function getEvents()
     {
