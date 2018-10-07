@@ -40,6 +40,9 @@ class DefaultController extends Controller
         $events = $em->getRepository('AppBundle:Events')->findAll();
 
         foreach ($events as $e){
+
+            echo $events->getContent();
+            
             return $events;
         }
 
