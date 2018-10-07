@@ -33,7 +33,7 @@ class DefaultController extends Controller
         ]);
     }
 
-    public function getevents()
+    public function getEvents()
     {
         $em = $this->getDoctrine()->getManager();
 
@@ -42,28 +42,28 @@ class DefaultController extends Controller
         return $events;
     }
 
-
-    public function coordonneesAction(Request $request, $id)
+    public function evenementsAction(Request $request)
     {
-        // var_dump($this -> getList()[$id]); die;
-        $personne = $this->getList()[$id];
-        $adresse = str_replace(' ', '+', $personne['adresse']);
-        // $suggestions = json_decode($this -> curl_get($adresse), true);
-
-        // pour rendre le service actif
         $curl = $this -> get('AppBundle\Network\ServiceCurl');
-        $suggestions = json_decode($curl->curl_get($adresse), true);
-        
-        $gps  = $suggestions['features'][0]['geometry']['coordinates'];
 
-        return $this->render('@App/annuaire/coordonnees.html.twig', [
+        $events = $this -> getEvenements();
+        $gpsEvents = [];
+
+        foreach($events as $e) {
+            $adresse = str_replace(' ', '+', $e['adresse']);
+            $suggestions = json_decode($curl->curl_get($adresse),true);
+            $gps  = $suggestions['features'][0]['geometry']['coordinates'];
+            $e['latitude'] = $gps[1];
+            $e['longitude'] = $gps[0];
+            $gpsEvents[] = $e;
+        }
+
+        return $this->render('@App/evenements/evenement.html.twig', [
             'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
-            'annuaire' => $this -> getList()[$id],
-            'latitude' => $gps[1],
-            'longitude' => $gps[0]
-        ]);
-
+            'evenements' => $gpsEvents
+        ]);                
     }
+
 
 }
     
@@ -125,28 +125,7 @@ class DefaultController extends Controller
      * @Route("/events", name="events")
      */
 
-    /*public function evenementsAction(Request $request)
-    {
-        $curl = $this -> get('AppBundle\Network\ServiceCurl');
-
-        $events = $this -> getEvenements();
-        $gpsEvents = [];
-
-        foreach($events as $e) {
-            $adresse = str_replace(' ', '+', $e['adresse']);
-            $suggestions = json_decode($curl->curl_get($adresse),true);
-            $gps  = $suggestions['features'][0]['geometry']['coordinates'];
-            $e['latitude'] = $gps[1];
-            $e['longitude'] = $gps[0];
-            $gpsEvents[] = $e;
-        }
-
-        return $this->render('@App/evenements/evenement.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
-            'evenements' => $gpsEvents
-        ]);                
-    }*/
-
+    
    /* protected function getEvenements()
     {
         $events = [
