@@ -9,3 +9,11 @@ h2{
     text-align: center;
     color:green;
 }
+
+header .nav1{
+    background-color:rgb(0, 153, 204);
+}
+
+header div a{
+    color:white;
+}
