@@ -41,6 +41,10 @@ class DefaultController extends Controller
             return $events;
     }
 
+    /**
+     * @Route("/icone", name="icone")
+     */
+
     public function evenementsAction(Request $request)
     {
         $curl = $this -> get('AppBundle\Network\ServiceCurl');
