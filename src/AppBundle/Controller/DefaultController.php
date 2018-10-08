@@ -38,15 +38,7 @@ class DefaultController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $events = $em->getRepository('AppBundle:Events')->findAll();
-
-        foreach ($events as $e){
-
-            echo $events->getContent();
-            
             return $events;
-        }
-
-        
     }
 
     public function evenementsAction(Request $request)
@@ -57,11 +49,11 @@ class DefaultController extends Controller
         $gpsEvents = [];
 
         foreach($events as $e) {
-            $adresse = str_replace(' ', '+', $e['adresse']);
+            $adresse = str_replace(' ', '+', $e->adresse);
             $suggestions = json_decode($curl->curl_get($adresse),true);
             $gps  = $suggestions['features'][0]['geometry']['coordinates'];
-            $e['latitude'] = $gps[1];
-            $e['longitude'] = $gps[0];
+            $e->latitude = $gps[1];
+            $e->longitude = $gps[0];
             $gpsEvents[] = $e;
         }
 
