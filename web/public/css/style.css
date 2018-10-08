@@ -16,4 +16,10 @@ header .nav1{
 
 header div a{
     color:white;
+    text-decoration:none;
+    text-align:left;
+}
+
+header .nav2{
+    background-color:rgb(102, 194, 255);
 }
