@@ -23,9 +23,9 @@
 
                 <div class="nav2">
                     <div>
-                        <img src="{{ asset('images/sciencetour.png')}}" alt="logo d'il parait que"/>
+                        <img src="{{ asset('sciencetour.png')}}" alt="logo d'il parait que"/>
                         <h1>IL PARRAIT</br>QUE...</h1>
-                        <img src="web/public/css/images/pdeb.png" alt="deuxieme logo"/>
+                        <img src="{{ asset('pdeb.png')}}" alt="deuxieme logo"/>
                     </div>
 
                     <nav>
@@ -68,7 +68,7 @@
                 let mymap = L.map('map').setView([49.2517, 2.472029], 10);
 
                 display_maps();
-                
+
                 {% for e in events %}
                     display_marker({{e.latitude}}, {{e.longitude}})
                 {% endfor %}
