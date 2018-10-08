@@ -21,7 +21,7 @@ class DefaultController extends Controller
     }
 
      /**
-     * @Route("/events", name="events")
+     * @Route("/map", name="map")
      */
 
     public function eventsAction(Request $request)
