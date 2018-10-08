@@ -38,7 +38,8 @@ class DefaultController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $events = $em->getRepository('AppBundle:Events')->findAll();
-            return $events;
+        
+        return $events;
     }
 
     /**
@@ -60,8 +61,6 @@ class DefaultController extends Controller
             $e->longitude = $gps[0];
             $gpsEvents[] = $e;
 
-            var_dump($gps);
-            die;
         }
 
         return $this->render('@App/evenements/evenement.html.twig', [
