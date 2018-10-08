@@ -57,6 +57,7 @@ class DefaultController extends Controller
             $gpsEvents[] = $e;
 
             var_dump($gpsEvents);
+            die;
         }
 
         return $this->render('@App/evenements/evenement.html.twig', [
