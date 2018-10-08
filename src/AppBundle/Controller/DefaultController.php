@@ -55,6 +55,8 @@ class DefaultController extends Controller
             $e->latitude = $gps[1];
             $e->longitude = $gps[0];
             $gpsEvents[] = $e;
+
+            var_dump($gpsEvents);
         }
 
         return $this->render('@App/evenements/evenement.html.twig', [
