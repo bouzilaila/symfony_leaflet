@@ -56,7 +56,7 @@ class DefaultController extends Controller
             $e->longitude = $gps[0];
             $gpsEvents[] = $e;
 
-            var_dump($gpsEvents);
+            var_dump($gps);
             die;
         }
 
