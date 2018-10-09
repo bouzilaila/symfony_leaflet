@@ -57,15 +57,19 @@ class DefaultController extends Controller
             $adresse = str_replace(' ', '+', $e->adresse);
             $suggestions = json_decode($curl->curl_get($adresse),true);
             $gps  = $suggestions['features'][0]['geometry']['coordinates'];
-            $e->latitude = $gps[1];
-            $e->longitude = $gps[0];
+            $e ->latitude = $gps[1];
+            $e ->longitude = $gps[0];
             $gpsEvents[] = $e;
 
         }
 
         return $this->render('@App/evenements/evenement.html.twig', [
             'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
-            'events' => $gpsEvents
+            'events' => $gpsEvents,
+            'latitude' => $gps[1],
+            'longitude' => $gps[0],
+            // 'latitude' => $e->$gps[1],
+            // 'longitude' => $e->$gps[0]
         ]);                
     }
 
