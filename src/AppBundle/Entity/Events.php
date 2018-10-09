@@ -138,4 +138,28 @@ class Events
     {
         return $this->heure;
     }
+
+    /**
+     * Set latitude
+     *
+     * @param string $latitude
+     *
+     * @return Events
+     */
+    public function setlatitude($latitude)
+    {
+        $this->latitude = $latitude;
+
+        return $this;
+    }
+
+    /**
+     * Get latitude
+     *
+     * @return string
+     */
+    public function getlatitude()
+    {
+        return $this->latitude;
+    }
 }
