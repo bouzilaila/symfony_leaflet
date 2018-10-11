@@ -14,7 +14,7 @@ class TwigmapExtend extends AbstractExtension
         );
     }
 
-    public function mapFunction()
+    public function mapFunction($map)
     {
         $map = "<div id='$map'></div>";
     
