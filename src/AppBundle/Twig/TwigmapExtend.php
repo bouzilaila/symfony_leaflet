@@ -3,7 +3,7 @@
 namespace AppBundle\Twig;
 
 use Twig\Extension\AbstractExtension;
-use Twig\TwigFilter;
+use Twig\TwigFunction;
 
 class TwigmapExtend extends AbstractExtension
 {
