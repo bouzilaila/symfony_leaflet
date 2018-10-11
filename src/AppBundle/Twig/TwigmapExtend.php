@@ -13,34 +13,30 @@ class TwigmapExtend extends AbstractExtension
     {
         return array(
             new TwigFunction('leaflet_map', array($this, 'leafletMapFunction')),
+            new TwigFunction('leaflet_icone', array($this, 'leafletIconeFunction')),
         );
     }
 
     public function leafletMapFunction($map)
     {
-        $mapLeaflet = "<div id='$map'></div>";
+        $mapLeaflet = "<div id='$map'></div>
+        <script>
+                let mymap = L.map('map').setView([48.8534, 2.3488], 11);
+
+                display_maps();
+        </script>";
     
         return $mapLeaflet;
     }
 
     //icones 
 
-    public function getIconeFunctions()
+    public function leafletIconeFunction($events)
     {
-        return array(
-            new TwigFunction('leaflet_icone', array($this, 'leafletIconeFunction')),
-        );
-    }
-
-    public function leafletIconeFunction()
-    {
-        $events = $this -> getEvents();
-
         foreach($events as $e)
         {
             $marker = display_marker($events);
         }
-
         return $marker;
     }
 }
