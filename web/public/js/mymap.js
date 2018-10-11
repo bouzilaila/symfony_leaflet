@@ -22,6 +22,6 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 function display_marker(latitude,longitude)
 {
-    L.marker([latitude,longitude]).addTo(mymap);
+    L.marker([latitude,longitude]).addTo($icone);
 }
 
