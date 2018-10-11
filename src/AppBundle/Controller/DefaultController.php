@@ -52,13 +52,14 @@ class DefaultController extends Controller
 
         $events = $this -> getEvents();
         $gpsEvents = [];
-
+    
         foreach($events as $e) {
             $adresse = str_replace(' ', '+', $e ->adresse);
             $suggestions = json_decode($curl->curl_get($adresse),true);
             $gps  = $suggestions['features'][0]['geometry']['coordinates'];
             $e ->latitude = $gps[1];
             $e ->longitude = $gps[0];
+            $x ->getAdresse();
             $gpsEvents[] = $e;
 
         }
