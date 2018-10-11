@@ -10,11 +10,11 @@ class TwigmapExtend extends AbstractExtension
     public function getFunctions()
     {
         return array(
-            new TwigFunction('map', array($this, 'mapFunction')),
+            new TwigFunction('leaflet_map', array($this, 'leafletMapFunction')),
         );
     }
 
-    public function mapFunction($map)
+    public function leafletMapFunction($map)
     {
         $map = "<div id='$map'></div>";
     
