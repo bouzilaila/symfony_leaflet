@@ -59,7 +59,7 @@ class DefaultController extends Controller
             $gps  = $suggestions['features'][0]['geometry']['coordinates'];
             $e ->latitude = $gps[1];
             $e ->longitude = $gps[0];
-            $x ->getAdresse();
+            $adresse ->getAdresse();
             $gpsEvents[] = $e;
 
         }
