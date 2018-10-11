@@ -20,7 +20,7 @@ class Events
     /**
      * @var string
      */
-    protected $adresse;
+    public $adresse;
 
     /**
      * @var \DateTime

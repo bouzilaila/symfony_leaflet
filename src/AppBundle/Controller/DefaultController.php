@@ -51,7 +51,6 @@ class DefaultController extends Controller
         $curl = $this -> get('AppBundle\Network\ServiceCurl');
 
         $events = $this -> getEvents();
-        $adresse = $this ->getAdresse();
         $gpsEvents = [];
     
         foreach($events as $e) {
