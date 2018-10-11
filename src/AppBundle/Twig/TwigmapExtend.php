@@ -7,7 +7,7 @@ use Twig\TwigFilter;
 
 class TwigmapExtend extends AbstractExtension
 {
-    public function getFunction()
+    public function getFunctions()
     {
         return array(
             new TwigFunction('map', array($this, 'mapFunction')),
