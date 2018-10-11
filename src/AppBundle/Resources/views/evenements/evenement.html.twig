@@ -39,8 +39,8 @@
 
                 <!--<div id='map'></div>-->
 
-                {{ leaflet_map ('map')|raw }}
-
+                {{ leaflet_map ('map')|raw }} <!-- raw permet de ne pas reconnaitre la syntaxe en chaine de caractere -->
+                
                 <section class='evenements'>
 
                     <h1>Les événements à la une</h1>
@@ -71,9 +71,9 @@
 
                 display_maps();
 
-                {% for e in events %}
-                    display_marker({{e.latitude}}, {{e.longitude}})
-                {% endfor %}
+                //{% for e in events %}
+                    //display_marker({{e.latitude}}, {{e.longitude}})
+                //{% endfor %}
             </script>   
         </body>
     </html>       
