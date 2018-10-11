@@ -35,7 +35,7 @@ class TwigmapExtend extends AbstractExtension
     {
         $marker = "<script>
         {% for e in events %}
-            display_marker({{ e.latitude }}, {{ e.longitude }}, {{'$icone'}})
+            display_marker({{ e.latitude }}, {{ e.longitude }}, {%'$icone'%})
         {% endfor %}
         </script>";
 
