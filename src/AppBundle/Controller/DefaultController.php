@@ -51,6 +51,7 @@ class DefaultController extends Controller
         $curl = $this -> get('AppBundle\Network\ServiceCurl');
 
         $events = $this -> getEvents();
+        $address= $this ->getAdresse();
         $gpsEvents = [];
     
         foreach($events as $e) {
@@ -59,7 +60,6 @@ class DefaultController extends Controller
             $gps  = $suggestions['features'][0]['geometry']['coordinates'];
             $e ->latitude = $gps[1];
             $e ->longitude = $gps[0];
-            $adresse ->getAdresse();
             $gpsEvents[] = $e;
 
         }
