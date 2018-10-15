@@ -33,7 +33,7 @@ class TwigmapExtend extends AbstractExtension
 
     public function leafletIconeFunction($icone)
     {
-        $marker = "<div id='$map '></div>
+        $marker ="
         <script>
         {% for e in events %}
             display_marker(mymap, {{ e.latitude}}, {{ e.longitude }})
