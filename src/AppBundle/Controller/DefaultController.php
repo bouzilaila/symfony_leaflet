@@ -68,7 +68,7 @@ class DefaultController extends Controller
             'events' => $gpsEvents,
             'latitude' => $gps[1],
             'longitude' => $gps[0],
-            'map' => $mapLeaflet
+            'map' => $this->getLeafletMapFunction()
 
             // 'latitude' => $e->$gps[1],
             // 'longitude' => $e->$gps[0]
