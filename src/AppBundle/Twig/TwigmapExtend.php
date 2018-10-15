@@ -23,7 +23,7 @@ class TwigmapExtend extends AbstractExtension
         <script>
                 let mymap = L.map('map').setView([48.8534, 2.3488], 11);
 
-                display_maps();
+                display_maps(mymap);
         </script>";
     
         return $mapLeaflet;
@@ -33,12 +33,13 @@ class TwigmapExtend extends AbstractExtension
 
     public function leafletIconeFunction($icone)
     {
-        $marker = "<script>
+        $marker = "<div id='$map '></div>
+        <script>
         {% for e in events %}
             display_marker({{ e.latitude}}, {{ e.longitude }})
         {% endfor %}
         </script>";
 
-        return $marker ->$icone;
+        return $marker
     }
 }
