@@ -40,9 +40,8 @@
                 <!--<div id='map'></div>-->
 
                 {{ leaflet_map ('map')|raw }} <!-- raw permet de ne pas reconnaitre la syntaxe comme une chaine de caractere -->
-
-                {##}
-                    {{ leaflet_icone ('map')|raw }}
+                
+                <script>{{ leaflet_icone ('map')}}</script>
                     
                 
                 <section class='evenements'>
