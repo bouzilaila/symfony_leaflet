@@ -20,7 +20,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(mymap);
 }
 
-function display_marker(mymap, latitude,longitude)
+function display_marker(mymap,latitude,longitude)
 {
     L.marker([latitude,longitude]).addTo(mymap);
 }
