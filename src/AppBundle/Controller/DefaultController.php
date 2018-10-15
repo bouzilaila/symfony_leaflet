@@ -67,7 +67,8 @@ class DefaultController extends Controller
             'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
             'events' => $gpsEvents,
             'latitude' => $gps[1],
-            'longitude' => $gps[0]
+            'longitude' => $gps[0],
+            'map' => $map
 
             // 'latitude' => $e->$gps[1],
             // 'longitude' => $e->$gps[0]
