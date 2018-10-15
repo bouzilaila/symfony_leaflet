@@ -40,6 +40,6 @@ class TwigmapExtend extends AbstractExtension
         {% endfor %}
         </script>";
 
-        return $marker
+        return $marker;
     }
 }
