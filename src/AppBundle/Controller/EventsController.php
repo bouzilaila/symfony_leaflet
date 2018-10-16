@@ -29,10 +29,13 @@ class EventsController extends Controller
 
     public function jsonAction()
     {
-        return $this->json('evenements/json.html.twig', array(
-            'json' => $this ->get_markers(),
-        ));
+        $em = $this->getDoctrine()->getManager(); // em entity manager
+
+        $events = $em->getRepository('AppBundle:Events')->findAll();
+
+        return $this->json($events);
     }
+        
 
     /**
      * Creates a new event entity.
