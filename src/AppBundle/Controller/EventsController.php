@@ -27,6 +27,13 @@ class EventsController extends Controller
         ));
     }
 
+    public function jsonAction()
+    {
+        return $this->json('evenements/json.html.twig', array(
+            'json' => $this ->get_markers(),
+        ));
+    }
+
     /**
      * Creates a new event entity.
      *
@@ -62,7 +69,7 @@ class EventsController extends Controller
         return $this->render('events/show.html.twig', array(
             'event' => $events,
             'delete_form' => $deleteForm->createView(),
-            'json' => $this ->get_markers(),
+            
         ));
     }
 
