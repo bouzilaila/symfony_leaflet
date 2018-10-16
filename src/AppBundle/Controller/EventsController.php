@@ -33,7 +33,22 @@ class EventsController extends Controller
 
         $events = $em->getRepository('AppBundle:Events')->findAll();
 
-        var_dump($events); die;
+        $curl = $this -> get('AppBundle\Network\ServiceCurl');
+
+        //$events = $this -> getEvents();
+        $gpsEvents = [];
+    
+            foreach($events as $e) {
+                $adresse = str_replace(' ', '+', $e ->getAdresse()); // lorsque la propriété est en privé il faut faite le get
+                $suggestions = json_decode($curl->curl_get($adresse),true);
+                $gps  = $suggestions['features'][0]['geometry']['coordinates'];
+                $e ->latitude = $gps[1];
+                $e ->longitude = $gps[0];
+                $gpsEvents[] = $e;
+
+            }
+
+            var_dump($gpsEvents); die;
         return $this->json($events);
     }
         

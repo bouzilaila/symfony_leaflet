@@ -48,26 +48,26 @@ class DefaultController extends Controller
 
     public function evenementsAction(Request $request)
     {
-        $curl = $this -> get('AppBundle\Network\ServiceCurl');
+        //$curl = $this -> get('AppBundle\Network\ServiceCurl');
 
-        $events = $this -> getEvents();
-        $gpsEvents = [];
+       // $events = $this -> getEvents();
+       //$gpsEvents = [];
     
-        foreach($events as $e) {
-            $adresse = str_replace(' ', '+', $e ->getAdresse()); // lorsque la propriété est en privé il faut faite le get
-            $suggestions = json_decode($curl->curl_get($adresse),true);
-            $gps  = $suggestions['features'][0]['geometry']['coordinates'];
-            $e ->latitude = $gps[1];
-            $e ->longitude = $gps[0];
-            $gpsEvents[] = $e;
+        //foreach($events as $e) {
+            //$adresse = str_replace(' ', '+', $e ->getAdresse()); // lorsque la propriété est en privé il faut faite le get
+            // $suggestions = json_decode($curl->curl_get($adresse),true);
+            // $gps  = $suggestions['features'][0]['geometry']['coordinates'];
+            // $e ->latitude = $gps[1];
+            // $e ->longitude = $gps[0];
+            // $gpsEvents[] = $e;
 
-        }
+        // }
 
         return $this->render('@App/evenements/evenement.html.twig', [
             'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
-            'events' => $gpsEvents,
-            'latitude' => $gps[1],
-            'longitude' => $gps[0],
+            //'events' => $gpsEvents,
+            // 'latitude' => $gps[1],
+            // 'longitude' => $gps[0],
 
 
             // 'latitude' => $e->$gps[1],
