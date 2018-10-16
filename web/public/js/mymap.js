@@ -27,6 +27,12 @@ function display_marker(mymap,latitude,longitude)
 
 function get_markers()
 {
-    fetch('')
-    .then(function(response)
+    fetch('http://dossierexotest2/web/app_dev.php/events/json')
+    .then(function(response){
+        return response.json();
+    })
+    .then(function(myJson) {
+        console.log(JSON.stringify(myJson));
+    });
+    
 }
