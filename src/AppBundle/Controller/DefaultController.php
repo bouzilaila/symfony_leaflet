@@ -39,7 +39,6 @@ class DefaultController extends Controller
 
         $events = $em->getRepository('AppBundle:Events')->findAll();
         
-        var_dump($events); die;
         return $events;
     }
 

@@ -33,6 +33,7 @@ class EventsController extends Controller
 
         $events = $em->getRepository('AppBundle:Events')->findAll();
 
+        var_dump($events); die;
         return $this->json($events);
     }
         
