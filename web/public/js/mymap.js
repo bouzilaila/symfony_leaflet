@@ -29,7 +29,7 @@ function get_markers()
 {
     fetch('http://51.75.31.43/dossierexotest2/web/app_dev.php/evenements/json')
     .then(function(response){
-        return response.json($events);
+        return response.json();
     })
     .then(function(myJson) {
         console.log(JSON.stringify(myJson));
