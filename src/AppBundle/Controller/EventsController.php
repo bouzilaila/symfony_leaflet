@@ -48,8 +48,9 @@ class EventsController extends Controller
 
             }
 
-            var_dump($gpsEvents); die;
-        return $this->json($events);
+            var_dump(json_encode($gpsEvents)); die;
+
+        return $this->json($gpsEvents);
     }
         
 
