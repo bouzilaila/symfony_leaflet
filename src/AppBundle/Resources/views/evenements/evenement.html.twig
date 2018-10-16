@@ -41,7 +41,11 @@
 
                 {{ leaflet_map ('map')|raw }} <!-- raw permet de ne pas reconnaitre la syntaxe comme une chaine de caractere -->
                 
-                <script>{{ leaflet_icone ('mymap')}}</script>
+                <script>{#{{ leaflet_icone ('mymap')}}#} 
+                    
+                    get_markers();
+
+                </script>
                     
                 
                 <section class='evenements'>
