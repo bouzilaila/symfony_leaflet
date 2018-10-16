@@ -27,7 +27,7 @@ function display_marker(mymap,latitude,longitude)
 
 function get_markers()
 {
-    fetch('http://dossierexotest2/web/app_dev.php/evenements/json')
+    fetch('http://51.75.31.43/dossierexotest2/web/app_dev.php/evenements/json')
     .then(function(response){
         return response.json();
     })
