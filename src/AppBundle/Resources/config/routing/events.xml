@@ -24,7 +24,7 @@
         <default key="_controller">AppBundle:Events:delete</default>
     </route>
 
-     <route id="events_json" path="/json" methods="GET">
+     <route id="evenements_json" path="/json" methods="GET">
         <default key="_controller">AppBundle:Events:json</default>
     </route>
 
