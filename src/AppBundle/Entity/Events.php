@@ -5,7 +5,7 @@ namespace AppBundle\Entity;
 /**
  * Events
  */
-class Events
+class Events  implements \JsonSerializable
 {
     /**
      * @var int
@@ -139,7 +139,17 @@ class Events
         return $this->heure;
     }
 
-}
+        /**
+         * Transforme l'objet PHP en JSON
+         */
+        public function jsonSerialize()
+        {
+            $vars = get_object_vars($this);
+    
+            return $vars;
+        }
+
+    }
 
     /*/**
      * Set latitude
