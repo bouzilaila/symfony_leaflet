@@ -33,9 +33,13 @@ function get_markers()
     })
     .then(function(myJson) {
         console.log(JSON.stringify(myJson));
-        display_marker(mymap,latitude,longitude);
-        events= JSON.parse(myJson);
-        console.log(events);
+        //display_marker(mymap,latitude,longitude);
+
+        for( let e of myJson) {
+            console.log(e);
+        }
+        
+    
 
     });
     
