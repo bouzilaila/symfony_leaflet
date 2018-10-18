@@ -37,8 +37,7 @@ function get_markers()
 
         // recuperation de tout mes evenements
         for( let e of myJson) {
-            console.log(e);
-            
+            display_marker(mymap,e.latitude, e.longitude);    
         }
         
     
