@@ -33,6 +33,8 @@ function get_markers()
     })
     .then(function(myJson) {
         console.log(JSON.stringify(myJson));
+        display_marker(mymap,latitude,longitude).addTo(mymap);
+
     });
     
 }
