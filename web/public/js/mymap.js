@@ -37,6 +37,7 @@ function get_markers()
 
         for( let e of myJson) {
             console.log(e);
+            return this.e;
         }
         
     
