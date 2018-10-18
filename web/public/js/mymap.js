@@ -32,11 +32,12 @@ function get_markers()
         return response.json();
     })
     .then(function(myJson) {
-        console.log(JSON.stringify(myJson));
+        console.log(JSON.stringify(myJson)); // myJson array ou sont stockes mes evenements
         //display_marker(mymap,latitude,longitude);
 
+        // recuperation 
         for( let e of myJson) {
-            console.log(e);
+            
             return this.e;
         }
         
