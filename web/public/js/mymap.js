@@ -38,7 +38,7 @@ function get_markers()
         // recuperation de tout mes evenements
         for( let e of myJson) {
             console.log(e);
-            return this.myJson;
+            
         }
         
     
