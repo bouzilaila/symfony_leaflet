@@ -37,11 +37,15 @@ function get_markers()
 
         // recuperation de tout mes evenements
         for( let e of myJson) {
-            display_marker(mymap,e.latitude, e.longitude);    
+            display_marker(mymap, e.latitude, e.longitude);
         }
-        
-    
-
     });
     
+}
+
+function getPopup(){
+
+    L.marker([51.5, -0.09]).addTo(map)
+    .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
+    .openPopup();
 }
