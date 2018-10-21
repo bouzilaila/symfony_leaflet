@@ -46,6 +46,6 @@ function get_markers()
 function getPopup(){
 
     L.marker([48.8534, 2.3488], 11).addTo(mymap)
-    .bindPopup(myJson)
+    .bindPopup(events)
     .openPopup();
 }
