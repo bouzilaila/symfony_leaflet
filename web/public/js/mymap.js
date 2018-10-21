@@ -45,7 +45,7 @@ function get_markers()
 
 function getPopup(){
 
-    L.marker([51.5, -0.09]).addTo(map)
+    L.marker([48.8534, 2.3488], 11).addTo(map)
     .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
     .openPopup();
 }
