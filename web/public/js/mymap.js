@@ -43,12 +43,9 @@ function get_markers()
     
 }
 
-function getPopup(latitude,longitude){
-
-    for( let e in events) {
-        L.marker([mymap,e.latitude, e.longitude])
-        .bindPopup(events)
-        .openPopup();
-    }
+function getPopup(mymap, latitude, longitude){
     
+    L.marker([latitude,longitude]).addTo(mymap)
+    .bindPopup('evenements')
+    .openPopup();
 }
