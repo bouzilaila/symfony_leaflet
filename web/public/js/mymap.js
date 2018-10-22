@@ -45,7 +45,7 @@ function get_markers()
 
 function getPopup(){
     
-    L.marker([latitude,longitude]).addTo(mymap)
+    L.marker(latitude,longitude).addTo(mymap)
     .bindPopup('evenements')
     .openPopup();
 }
