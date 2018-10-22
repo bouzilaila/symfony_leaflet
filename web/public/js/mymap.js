@@ -23,7 +23,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 function display_marker(mymap,latitude,longitude,nom,adresse)
 {
     L.marker([latitude,longitude]).addTo(mymap)
-    .bindPopup(nom + '<br/>'+'<br/>' + adresse)
+    .bindPopup('<strong>'+nom+'</strong>' + '<br/>' + adresse)
     .openPopup();
 }
 
