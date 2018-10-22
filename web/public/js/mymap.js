@@ -46,7 +46,7 @@ function get_markers()
 function getPopup(){
 
     for( let e of myJson) {
-        L.marker([e.latitude, e.longitude]).addTo(mymap)
+        L.marker([mymap,e.latitude, e.longitude]).addTo(mymap)
         .bindPopup('evenements')
         .openPopup();
     }
