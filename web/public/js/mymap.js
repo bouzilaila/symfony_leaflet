@@ -23,13 +23,13 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 function display_marker(mymap,latitude,longitude,nom,adresse)
 {
     L.marker([latitude,longitude]).addTo(mymap)
-    .bindPopup(nom,adresse)
+    .bindPopup(nom + '<br/>' + adresse)
     .openPopup();
 }
 
 function get_markers()
 {
-    fetch('http://51.75.31.43/dossierexotest2/web/app_dev.php/evenements/json')
+    fetch('http://51.75.31.43/dossierexotest2/web/app_dev.php/evenements/json?option=all&option2=jhgjghj')
     .then(function(response){
         return response.json();
     })

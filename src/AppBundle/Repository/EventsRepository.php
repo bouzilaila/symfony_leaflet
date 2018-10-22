@@ -2,6 +2,7 @@
 
 namespace AppBundle\Repository;
 
+
 /**
  * EventsRepository
  *
@@ -10,4 +11,6 @@ namespace AppBundle\Repository;
  */
 class EventsRepository extends \Doctrine\ORM\EntityRepository
 {
+
+    
 }
