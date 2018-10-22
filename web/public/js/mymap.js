@@ -43,7 +43,7 @@ function get_markers()
     
 }
 
-function getPopup(latitude, longitude){
+function getPopup(){
     
     L.marker([latitude,longitude]).addTo(mymap)
     .bindPopup('evenements')
