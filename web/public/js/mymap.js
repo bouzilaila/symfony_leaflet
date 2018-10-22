@@ -20,10 +20,10 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(mymap);
 }
 
-function display_marker(mymap,latitude,longitude,nom)
+function display_marker(mymap,latitude,longitude,nom,adresse)
 {
     L.marker([latitude,longitude]).addTo(mymap)
-    .bindPopup(nom)
+    .bindPopup(nom,adresse)
     .openPopup();
 }
 
@@ -39,7 +39,7 @@ function get_markers()
 
         // recuperation de tout mes evenements
         for( let e of myJson) {
-            display_marker(mymap, e.latitude, e.longitude, e.nom);
+            display_marker(mymap, e.latitude, e.longitude, e.nom, e.adresse);
         }
     });
     
