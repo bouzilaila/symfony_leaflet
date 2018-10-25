@@ -47,7 +47,7 @@ class EventsController extends Controller
 
         $curl = $this -> get('AppBundle\Network\ServiceCurl');
 
-        //$events = $this -> getEvents();
+        $events = $this -> getEvents();
         $gpsEvents = [];
     
             foreach($events as $e) {
