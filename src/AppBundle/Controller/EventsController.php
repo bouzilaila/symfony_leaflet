@@ -3,6 +3,7 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\Events;
+use AppBundle\Repository\EventsRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -37,7 +38,7 @@ class EventsController extends Controller
             $events = $em->getRepository('AppBundle:Events')->findAll();
             break;
             case 'pastEvent':
-            $events = $em->getRepository('AppBundle:Events')->findPastEvent();
+            $events = $em->getRepository('AppBundle:Events')->pastEvent();
             break;
             
         }
@@ -47,7 +48,7 @@ class EventsController extends Controller
 
         $curl = $this -> get('AppBundle\Network\ServiceCurl');
 
-        $events = $this -> getEvents();
+        //$events = $this -> getEvents();
         $gpsEvents = [];
     
             foreach($events as $e) {

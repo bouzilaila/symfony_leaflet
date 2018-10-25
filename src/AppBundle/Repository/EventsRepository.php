@@ -11,7 +11,7 @@ namespace AppBundle\Repository;
  */
 class EventsRepository extends \Doctrine\ORM\EntityRepository
 {
-    public function findPastEvent()
+    public function pastEvent()
     {
         $query = $repository->createQueryBuilder('e')
         ->where('e.date > :date')
