@@ -33,7 +33,7 @@ class EventsController extends Controller
         var_dump($request->query->get('option')); die;
         // em entity manager
         $em = $this->getDoctrine()->getManager(); 
-        switch ($request->query->get('eventType')){
+        switch ($request->query->get('option')){
             case 'allEvent':
             $events = $em->getRepository('AppBundle:Events')->findAll();
             break;
@@ -41,12 +41,10 @@ class EventsController extends Controller
             $events = $em->getRepository('AppBundle:Events')->findPastEvent();
             break;
             
-            
-
         }
         
-
-        
+        //$events = $em->getRepository('AppBundle:Events')->findAll();
+        //$events = $em->getRepository('AppBundle:Events')->find();
 
         $curl = $this -> get('AppBundle\Network\ServiceCurl');
 
