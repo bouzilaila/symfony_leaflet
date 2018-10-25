@@ -27,11 +27,26 @@ class EventsController extends Controller
         ));
     }
 
-    public function jsonAction()
+    public function jsonAction(Request $request)
     {
-        $em = $this->getDoctrine()->getManager(); // em entity manager
 
-        $events = $em->getRepository('AppBundle:Events')->findAll();
+        var_dump($request);
+        // em entity manager
+        $em = $this->getDoctrine()->getManager(); 
+        switch ($request->request ->get('eventType')){
+            case 'allEvent':
+            $events = $em->getRepository('AppBundle:Events')->findAll();
+            break;
+            case 'pastEvent':
+            $events = $em->getRepository('AppBundle:Events')->findPastEvent();
+            break;
+            
+            
+
+        }
+        
+
+        
 
         $curl = $this -> get('AppBundle\Network\ServiceCurl');
 

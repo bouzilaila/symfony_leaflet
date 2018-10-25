@@ -27,9 +27,9 @@ function display_marker(mymap,latitude,longitude,nom,adresse)
     .openPopup();
 }
 
-function get_markers()
+function get_markers(eventType)
 {
-    fetch('http://51.75.31.43/dossierexotest2/web/app_dev.php/evenements/json?option=all&option2=jhgjghj')
+    fetch(`http://51.75.31.43/dossierexotest2/web/app_dev.php/evenements/json?option=${eventType}`)
     .then(function(response){
         return response.json();
     })
@@ -45,9 +45,3 @@ function get_markers()
     
 }
 
-/*function getPopup(){
-    
-    L.marker([latitude,longitude]).addTo(mymap)
-    .bindPopup('evenements')
-    .openPopup();
-// }*/
