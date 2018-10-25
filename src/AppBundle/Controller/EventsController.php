@@ -52,6 +52,7 @@ class EventsController extends Controller
         $gpsEvents = [];
     
             foreach($events as $e) {
+                $events = [];
                 $adresse = str_replace(' ', '+', $e ->getAdresse()); // lorsque la propriété est en privé il faut faite le get
                 $suggestions = json_decode($curl->curl_get($adresse),true);
                 $gps  = $suggestions['features'][0]['geometry']['coordinates'];
