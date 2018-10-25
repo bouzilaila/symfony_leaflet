@@ -30,7 +30,7 @@ class EventsController extends Controller
     public function jsonAction(Request $request)
     {
 
-        var_dump($request->query->get('eventType')); die;
+        var_dump($request->query->get('option')); die;
         // em entity manager
         $em = $this->getDoctrine()->getManager(); 
         switch ($request->query->get('eventType')){
