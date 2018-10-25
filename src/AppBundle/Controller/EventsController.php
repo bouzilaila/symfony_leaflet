@@ -30,10 +30,10 @@ class EventsController extends Controller
     public function jsonAction(Request $request)
     {
 
-        var_dump($request);
+        var_dump($request->query->get('eventType')); die;
         // em entity manager
         $em = $this->getDoctrine()->getManager(); 
-        switch ($request->request ->get('eventType')){
+        switch ($request->query->get('eventType')){
             case 'allEvent':
             $events = $em->getRepository('AppBundle:Events')->findAll();
             break;
