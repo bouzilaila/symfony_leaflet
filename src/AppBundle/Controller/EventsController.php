@@ -50,7 +50,7 @@ class EventsController extends Controller
 
         // $events = $this -> getEvents();
         $gpsEvents = [];
-        $events = array();
+        
     
             foreach($events as $e) {
                 
@@ -60,6 +60,7 @@ class EventsController extends Controller
                 $e ->latitude = $gps[1];
                 $e ->longitude = $gps[0];
                 $gpsEvents[] = $e;
+                $events = array();
 
             }
 
