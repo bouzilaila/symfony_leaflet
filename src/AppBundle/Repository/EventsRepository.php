@@ -18,7 +18,7 @@ class EventsRepository extends \Doctrine\ORM\EntityRepository
         ->setParameter('date', (new \DateTime())->format('Y-m-d H:i:s'))
         ->getQuery();
 
-        $query_events = $query->getResult();
+       return $query->getResult();
     }
     
     
