@@ -36,7 +36,7 @@ class EventsController extends Controller
         $em = $this->getDoctrine()->getManager(); 
         switch ($request->query->get('option')){
             case 'pastEvent':
-            $events = $em->getRepository('AppBundle:Events')->pastEvent();
+            $events = $em->getRepository('AppBundle:Events')->pastEvent(); var_dump($events); die;
             break;
             case 'allEvent':
             default:

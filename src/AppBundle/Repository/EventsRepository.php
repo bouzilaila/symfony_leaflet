@@ -14,8 +14,8 @@ class EventsRepository extends \Doctrine\ORM\EntityRepository
     public function pastEvent()
     {
         $query = $this->createQueryBuilder('e')
-        ->where('e.date > :date')
-        ->setParameter('date', '22/10/2018')
+        ->where('e.date < :date')
+        ->setParameter('date', (new \DateTime())->format('Y-m-d H:i:s'))
         ->getQuery();
 
         $query_events = $query->getResult();
