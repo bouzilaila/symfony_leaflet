@@ -2,6 +2,7 @@
 
 namespace AppBundle\Entity;
 
+use Symfony\Component\Validator\Constraints as Assert;
 /**
  * Events
  */
@@ -14,6 +15,8 @@ class Events  implements \JsonSerializable
 
     /**
      * @var string
+     *
+     * @Assert\NotBlank() // le nom ne doit pas etre vide
      */
     private $nom;
 

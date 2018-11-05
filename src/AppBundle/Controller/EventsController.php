@@ -78,13 +78,13 @@ class EventsController extends Controller
     public function newAction(Request $request)
     {
         $events = new Events();
-        $form = $this->createForm('AppBundle\Form\EventsType', $events);
-        $form->handleRequest($request);
+        $form = $this->createForm('AppBundle\Form\EventsType', $events); // le contenu du formulaire va etre injecté dans la variable events
+        $form->handleRequest($request); // recupere toutes les donnees qui viennent du formulaire
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $em->persist($events);
-            $em->flush();
+            $em->persist($events); // persist et flush enregistre les donnees dans la base
+            $em->flush(); // entregiste pas besoin de faire une requete avec insert ou update
 
             return $this->redirectToRoute('events_show', array('id' => $events->getId()));
         }
