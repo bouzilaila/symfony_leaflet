@@ -35,13 +35,12 @@ class EventsController extends Controller
         $events = [];
         $em = $this->getDoctrine()->getManager(); 
         switch ($request->query->get('option')){
-            case 'allEvent':
-            $events = $em->getRepository('AppBundle:Events')->findAll();
-            break;
             case 'pastEvent':
             $events = $em->getRepository('AppBundle:Events')->pastEvent();
             break;
-            
+            case 'allEvent':
+            default:
+            $events = $em->getRepository('AppBundle:Events')->findAll();            
         }
         
         //$events = $em->getRepository('AppBundle:Events')->findAll();
