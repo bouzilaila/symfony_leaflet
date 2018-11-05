@@ -83,7 +83,7 @@ class EventsController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $em->persist($event);
+            $em->persist($events);
             $em->flush();
 
             return $this->redirectToRoute('events_show', array('id' => $events->getId()));
