@@ -50,7 +50,7 @@ class EventsController extends Controller
 
         // $events = $this -> getEvents();
         $gpsEvents = [];
-        $events = [];
+        // $events = [];
     
             foreach($events as $e) {
                 
