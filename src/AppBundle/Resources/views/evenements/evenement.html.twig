@@ -38,8 +38,8 @@
             <main>
 
                 <div>
-                    <button>Tous les évenements</button>
-                    <button>Evenements passés</button>
+                    <button id='onclick'>Tous les évenements</button>
+                    <button id='onclick'>Evenements passés</button>
                     <button>Evenements futur</button>
                     <button>Tous les évenements près de chez moi</button>
                 </div>
@@ -52,6 +52,10 @@
                     
                     get_markers('allEvent');
                     //getPopup();
+
+                    document.getElementById("onclick").addEventListener("click", function(){
+                        document.getElementById("demo").innerHTML = "Hello";
+                    });
 
                 </script>
                     
