@@ -38,10 +38,10 @@
             <main>
 
                 <div>
-                    <button id='e_allEvent'>Tous les évenements</button>
-                    <button id='e_pastEvent'>Evenements passés</button>
-                    <button id='e_futurEvent'>Evenements futur</button>
-                    <button id='e_allEventAround'>Tous les évenements près de chez moi</button>
+                    <button id='allEvent'>Tous les évenements</button>
+                    <button id='pastEvent'>Evenements passés</button>
+                    <button id='futurEvent'>Evenements futur</button>
+                    <button id='allEventAround'>Tous les évenements près de chez moi</button>
                 </div>
 
                 <!--<div id='map'></div>-->
@@ -50,13 +50,14 @@
                 
                 <script>{#{{ leaflet_icone ('mymap')}}#} 
                     
-                    get_markers('allEvent');
+                    //get_markers('allEvent');
+                    get_markers();
                     //getPopup();
                     //for(element of document.querySelector('.querySelect')) // autre solution en ajoutant une class aux boutons
-                    let allEvent = document.getElementById("e_allEvent").addEventListener("click", get_markers);
-                    let pastEvent = document.getElementById("e_pastEvent").addEventListener("click", get_markers);
-                    let futurEvent = document.getElementById("e_futurEvent").addEventListener("click", get_markers);
-                    let allEventAround = document.getElementById("e_allEventAround").addEventListener("click", get_markers );
+                    let allEvent = document.getElementById("allEvent").addEventListener("click", get_markers);
+                    let pastEvent = document.getElementById("pastEvent").addEventListener("click", get_markers);
+                    let futurEvent = document.getElementById("futurEvent").addEventListener("click", get_markers);
+                    let allEventAround = document.getElementById("allEventAround").addEventListener("click", get_markers);
 
 
                 </script>
