@@ -20,6 +20,15 @@ class EventsRepository extends \Doctrine\ORM\EntityRepository
 
        return $query->getResult();
     }
-    
-    
+
+    public function futurEvent()
+    {
+        $query = $this->createQueryBuilder('e')
+        ->where('e.date > :date')
+        ->setParameter('date', (new \DateTime())->format('Y-m-d H:i:s'))
+        ->getQuery();
+
+    return $query->getResult();
+    }
+
 }

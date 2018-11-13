@@ -38,12 +38,12 @@
             <main>
 
                 <div>
-                    <button id='onclick'>Tous les évenements</button>
+                    <button id='e_allEvent'>Tous les évenements</button>
                     <p id="event"></p>
-                    <button id='onclick'>Evenements passés</button>
+                    <button id='e_pastEvent'>Evenements passés</button>
                     <p id="event"></p>
-                    <button>Evenements futur</button>
-                    <button>Tous les évenements près de chez moi</button>
+                    <button id='e_futurEvent'>Evenements futur</button>
+                    <button id='e_allEventAround'>Tous les évenements près de chez moi</button>
                 </div>
 
                 <!--<div id='map'></div>-->
@@ -54,10 +54,14 @@
                     
                     get_markers('allEvent');
                     //getPopup();
-                    
-                    document.getElementById("onclick").addEventListener("click", myFunction);
 
-                    function myFunction() {
+                    let allEvent = document.getElementById("e_allEvent").addEventListener("click", myFunctionEvent);
+                    let pastEvent = document.getElementById("e_pastEvent").addEventListener("click", pastEvent);
+                    let futurEvent = document.getElementById("e_futurEvent").addEventListener("click", futurEvent);
+                    let allEventAround = document.getElementById("e_allEventAround").addEventListener("click", );
+
+
+                    function myFunctionEvent() {
                         document.getElementById("event").innerHTML = "Hello";
                     }
 
