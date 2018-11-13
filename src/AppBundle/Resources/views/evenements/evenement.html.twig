@@ -54,10 +54,12 @@
                     
                     get_markers('allEvent');
                     //getPopup();
+                    
+                    document.getElementById("onclick").addEventListener("click", myFunction);
 
-                    document.getElementById("onclick").addEventListener("click", function(){
+                    function myFunction() {
                         document.getElementById("event").innerHTML = "Hello";
-                    });
+                    }
 
                 </script>
                     
