@@ -27,9 +27,9 @@ function display_marker(mymap,latitude,longitude,nom,adresse)
     .openPopup();
 }
 
-function get_markers(event)
+function get_markers(e)
 {
-    eventType = event.target.id // recupere id du bouton un evenement se produit 
+    eventType = e.target.id // recupere id du bouton un evenement se produit 
     fetch(`http://51.75.31.43/dossierexotest2/web/app_dev.php/evenements/json?option=${eventType}`)
     .then(function(response){
         return response.json();
