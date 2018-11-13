@@ -38,9 +38,11 @@ class EventsController extends Controller
             case 'pastEvent':
             $events = $em->getRepository('AppBundle:Events')->pastEvent(); // var_dump($events); die;
             break;
+            case 'futurEvent':
+            $events = $em->getRepository('AppBundle:Events')->futurEvent();
             case 'allEvent':
             default:
-            $events = $em->getRepository('AppBundle:Events')->findAll();            
+            $events = $em->getRepository('AppBundle:Events')->findAll(); 
         }
         
         //$events = $em->getRepository('AppBundle:Events')->findAll();
