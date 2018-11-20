@@ -42,6 +42,11 @@ function get_markers(e = null)
     .then(function(myJson) {
         console.log(JSON.stringify(myJson)); // myJson array ou sont stockes mes evenements
         //display_marker(mymap,latitude,longitude);
+        
+        // supprimer les markers
+        for(m of markers){
+            mymap.removeLayer(marker)
+        }
 
         // recuperation de tout mes evenements
         for( let e of myJson) {
