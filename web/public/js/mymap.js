@@ -46,7 +46,7 @@ function get_markers(e = null)
 
         // supprimer les markers
         for(m of markers){
-            mymap.removeLayer(marker)
+            mymap.removeLayer(m)
         }
 
         // recuperation de tout mes evenements
