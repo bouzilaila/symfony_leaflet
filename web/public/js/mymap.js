@@ -9,6 +9,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 L.marker([latitude,longitude]).addTo(mymap);
 }*/
+let markers;
 
 function display_maps(mymap)
 {
@@ -22,9 +23,11 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 function display_marker(mymap,latitude,longitude,nom,adresse)
 {
-    L.marker([latitude,longitude]).addTo(mymap)
+    marker = new L.Marker([latitude,longitude])
+    marker.addTo(mymap)
     .bindPopup('<strong>'+nom+'</strong>' + '<br/>' + adresse)
     .openPopup();
+    markers.push(marker) // les markers stockés dans un tableau 
 }
 
 function get_markers(e = null)
@@ -43,6 +46,7 @@ function get_markers(e = null)
         // recuperation de tout mes evenements
         for( let e of myJson) {
             display_marker(mymap, e.latitude, e.longitude, e.nom, e.adresse);
+            console.log(markers);
         }
     });
     
