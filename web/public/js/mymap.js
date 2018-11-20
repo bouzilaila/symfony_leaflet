@@ -49,6 +49,7 @@ function get_markers(e = null)
             console.log(markers);
         }
     });
+
     
 }
 
